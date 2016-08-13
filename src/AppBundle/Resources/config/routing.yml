@@ -1,0 +1,86 @@
+app_select:
+    path: /
+    defaults: { _controller: AppBundle:Default:select }
+
+app_dashboard:
+    path: /dashboard
+    defaults: { _controller: AppBundle:Dashboard:show }
+
+app_user_logout:
+    path: /logout
+
+app_user_login:
+    path: /login
+    defaults: { _controller: AppBundle:Login:login }
+
+app_user_register:
+    path: /register
+    defaults: { _controller: AppBundle:Registration:register }
+
+app_user_register_verification:
+    path: /register/verification
+    defaults: { _controller: AppBundle:Registration:verificate }
+
+app_user_profile:
+    path: /profile/show
+    defaults: { _controller: AppBundle:Profile:show }
+
+app_user_statistics:
+    path: /users/statistics
+    defaults: { _controller: AppBundle:User:statistics }
+
+app_user_list:
+    path: /users
+    defaults: { _controller: AppBundle:User:list }
+
+app_user_browse:
+    path: /users/browse
+    defaults: { _controller: AppBundle:User:browse }
+
+app_user_role_change:
+    path: /user/{id}/change/role
+    defaults: { _controller: AppBundle:User:changeRole }
+
+app_user_password_change:
+    path: /change/password
+    defaults: { _controller: AppBundle:User:changePassword }
+
+app_user_avatar_change:
+    path: /change/avatar
+    defaults: { _controller: AppBundle:User:changeAvatar }
+
+app_user_delete:
+    path: /user/delete/{id}
+    defaults: { _controller: AppBundle:User:delete }
+
+app_user_transport:
+    path: /transports/my
+    defaults: { _controller: AppBundle:Transport:get }
+
+app_transport_add:
+    path: /transport/report
+    defaults: { _controller: AppBundle:Transport:add }
+
+app_transport_activate:
+    path: /transport/activate/{id}
+    defaults: { _controller: AppBundle:Transport:activate }
+
+app_transport_deactivate:
+    path: /transport/deactivate/{id}
+    defaults: { _controller: AppBundle:Transport:deactivate }
+
+app_transport_delete:
+    path: /transport/delete/{id}
+    defaults: { _controller: AppBundle:Transport:delete }
+
+app_transport_browse:
+    path: /transports/browse
+    defaults: { _controller: AppBundle:Transport:browse }
+
+app_transport_user:
+    path: /user/{id}/transports
+    defaults: { _controller: AppBundle:User:transports }
+
+app_invitation_add:
+    path: /invitation/add
+    defaults: { _controller: AppBundle:Invitation:add }

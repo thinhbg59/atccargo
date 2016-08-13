@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Standard Meta -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+        <!-- Site Properties -->
+        <title>{{ website_title }}</title>
+        <link rel="icon" href="{{ asset('assets/images/logo.png') }}" type="image/png" sizes="16x16">
+
+        <!-- CSS Components-->
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/semantic/dist/components/reset.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/semantic/dist/components/site.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/semantic/dist/components/container.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/semantic/dist/components/grid.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/semantic/dist/components/header.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/semantic/dist/components/image.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/semantic/dist/components/menu.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/semantic/dist/components/divider.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/semantic/dist/components/dropdown.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/semantic/dist/components/segment.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/semantic/dist/components/button.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/semantic/dist/components/list.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/semantic/dist/components/icon.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/semantic/dist/components/sidebar.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/semantic/dist/components/transition.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/semantic/dist/components/input.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/semantic/dist/components/form.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/semantic/dist/components/message.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/semantic/dist/components/table.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/semantic/dist/components/label.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/semantic/dist/components/modal.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/semantic/dist/components/dimmer.css') }}">
+
+        <!-- Additional CSS -->
+        <style>
+            body {
+                background-color: #f3f3f3;
+            }
+            .ui.small.header {
+                text-transform: uppercase;
+            }
+            .ui.table thead tr th {
+                background-color: #2185D0;
+                color: #C0EFF9
+            }
+        </style>
+        {% block extraCss %}{% endblock %}
+    </head>
+    <body>
+
+        <!-- Container -->
+        <div class="ui container">
+
+            <!-- Header Segment -->
+            <div class="ui center aligned segment">
+                <a href="{{ path('app_dashboard') }}"><img src="{{ asset('assets/images/logo_header.png') }}" alt="atc cargo"></a>
+            </div>
+
+            <!-- Menu -->
+            {% if active_item is defined %}
+                {% block navbar %}
+                    <div class="ui blue inverted menu">
+                        <a class="{% if active_item == 'dashboard' %}active{% endif %} item" href="{{ path('app_dashboard') }}"><i class="suitcase icon"></i>{% trans %}Driver card{% endtrans %}</a>
+                        <a class="{% if active_item == 'transport_add' %}active{% endif %} item" href="{{ path('app_transport_add') }}"><i class="add square icon"></i>{% trans %}Report new transport{% endtrans %}</a>
+                        <a class="{% if active_item == 'transports_my' %}active{% endif %} item" href="{{ path('app_user_transport') }}"><i class="cube icon"></i>{% trans %}Your transports{% endtrans %}</a>
+                        <a class="{% if active_item == 'drivers_list' %}active{% endif %} item" href="{{ path('app_user_list') }}"><i class="world icon"></i>{% trans %}List of drivers{% endtrans %}</a>
+                        <a class="{% if active_item == 'driver_statistics' %}active{% endif %} item" href="{{ path('app_user_statistics') }}"><i class="area chart icon"></i>{% trans %}Driver statistics{% endtrans %}</a>
+                        <div class="right menu">
+                            <div class="ui dropdown item">
+                                <i class="user icon"></i>{% trans %}Hello{% endtrans %}, {{ app.user.username|capitalize }} <i class="dropdown icon"></i>
+                                <div class="menu">
+                                    <a class="{% if active_item == 'profile_show' %}active{% endif %} item" href="{{ path('app_user_profile') }}">{% trans %}Show profile{% endtrans %}</a>
+                                    {% if is_granted('ROLE_DISPATCHER') %}
+                                        <div class="ui divider"></div>
+                                        {% if is_granted('ROLE_BOSS') %}
+                                            <a class="{% if active_item == 'user_add' %}active{% endif %} item" href="{{ path('app_invitation_add') }}">{% trans %}Add employee{% endtrans %}</a>
+                                            <a class="{% if active_item == 'users_browse' %}active{% endif %} item" href="{{ path('app_user_browse') }}">{% trans %}Browse employees{% endtrans %}</a>
+                                        {% endif %}
+                                        <a class="{% if active_item == 'transport_browse' %}active{% endif %} item" href="{{ path('app_transport_browse') }}">
+                                            {% trans %}Browse transports{% endtrans %}
+                                            {% if notifications.transports %}
+                                                <div class="ui green label">!</div>
+                                            {% endif %}
+                                        </a>
+                                    {% endif %}
+                                    <div class="ui divider"></div>
+                                    <a class="item" href="{{ path('app_user_logout') }}">{% trans %}Logout{% endtrans %}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endblock navbar %}
+
+
+            <!-- Content Segment -->
+
+            {% endif %}
+            <div class="ui center aligned segment">
+                {% if app.user.username is defined %}
+                    <div class="ui left aligned grid">
+                        <div class="ui four wide column">
+                            <h5 class="ui small header">
+                                {% trans %}Made transports{% endtrans %}
+                                <div class="sub header">
+                                    <h1 class="ui blue inverted header">{{ statistics.transportsQuantity }}</h1>
+                                </div>
+                            </h5>
+                        </div>
+                        <div class="ui four wide column">
+                            <h5 class="ui small header">
+                                {% trans %}Earned money{% endtrans %}
+                                <div class="sub header">
+                                    <h1 class="ui blue inverted header">{{ statistics.money|number_format(2, ',', ' ') }} PLN</h1>
+                                </div>
+                            </h5>
+                        </div>
+                        <div class="ui four wide column">
+                            <h5 class="ui small header">
+                                {% trans %}Travelled distance{% endtrans %}
+                                <div class="sub header">
+                                    <h1 class="ui blue inverted header">{{ statistics.distance|number_format(0, '', ' ') }} KM</h1>
+                                </div>
+                            </h5>
+                        </div>
+                        <div class="ui four wide column">
+                            <h5 class="ui small header">
+                                {% trans %}Fuel burned{% endtrans %}
+                                <div class="sub header">
+                                    <h1 class="ui blue inverted header">{{ statistics.fuel|number_format(0, '', ' ') }} L</h1>
+                                </div>
+                            </h5>
+                        </div>
+                    </div>
+                {% endif %}
+
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+
+        <!-- Javascript section -->
+        {% block javascript %}
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+            <script src="{{ asset('assets/vendor/semantic/dist/components/sidebar.js') }}"></script>
+            <script src="{{ asset('assets/vendor/semantic/dist/components/form.js') }}"></script>
+            <script src="{{ asset('assets/vendor/semantic/dist/components/modal.js') }}"></script>
+            <script src="{{ asset('assets/vendor/semantic/dist/components/dimmer.js') }}"></script>
+            <script src="{{ asset('assets/vendor/semantic/dist/components/transition.js') }}"></script>
+            <script src="{{ asset('assets/vendor/semantic/dist/components/dropdown.js') }}"></script>
+            <script src="{{ asset('assets/vendor/readmore/readmore.js') }}"></script>
+
+            <script>
+                $(document)
+                        .ready(function() {
+                            $('.ui.dropdown')
+                                    .dropdown({
+                                        on: 'click'
+                                    })
+                            ;
+                        })
+                ;
+            </script>
+            {% block extraJs %}{% endblock extraJs %}
+        {% endblock %}
+    </body>
+</html>

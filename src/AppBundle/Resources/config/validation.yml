@@ -1,0 +1,85 @@
+AppBundle\Entity\ChangeAvatar:
+    properties:
+        avatar:
+            - Choice:
+                choices: [0, 1, 2, 3, 4, 5, 6, 7, 8]
+                message: changeAvatar.avatar.choice
+AppBundle\Entity\ChangePassword:
+    properties:
+        password:
+            - Symfony\Component\Security\Core\Validator\Constraints\UserPassword:
+                message: changePassword.password.password
+
+        plainPassword:
+            - NotBlank: ~
+            - Length:
+                min: 6
+                minMessage: changePassword.plainPassword.length_min
+AppBundle\Entity\Invitation:
+    properties:
+        email:
+            - Email:
+                message: invitation.email.email
+                checkMX: true
+        code:
+            - NotBlank: ~
+            - Type:
+                type: integer
+                message: invitation.code.type
+        roles:
+            - NotBlank: ~
+            - Choice:
+                choices: [boss, viceboss, dispatcher, driver, demo, szef, viceszef, dyspozytor, kierowca, okres testowy]
+                message: invitation.roles.choice
+AppBundle\Entity\Transport:
+    properties:
+        startCity:
+            - NotBlank: ~
+        endCity:
+            - NotBlank: ~
+        startDate:
+            - NotBlank: ~
+            - DateTime:
+                format: Y-m-d H:i
+                message: transport.startDate.datetime
+        endDate:
+            - NotBlank: ~
+            - DateTime:
+                format: Y-m-d H:i
+                message: transport.startDate.datetime
+        cargo:
+            - NotBlank: ~
+        distance:
+            - NotBlank: ~
+            - Type:
+                type: integer
+                message: transport.distance.type
+        weight:
+            - NotBlank: ~
+            - Type:
+                type: integer
+                message: transport.weight.type
+        damage:
+            - NotBlank: ~
+            - Type:
+                type: integer
+                message: transport.damage.type
+            - Range:
+                min: 0
+                minMessage: transport.damage.range_min
+                max: 100
+                maxMessage: transport.damage.range_max
+        burnedFuel:
+            - NotBlank: ~
+            - Type:
+                type: integer
+        fueledFuel:
+            - Type:
+                type: integer
+        screenshot:
+            - NotBlank: ~
+            - File:
+                maxSize: 5M
+                maxSizeMessage: transport.screenshot.file_max
+                mimeTypes: [image/jpeg, image/jpg, image/png]
+                mimeTypesMessage: transport.screenshot.mimeTypes

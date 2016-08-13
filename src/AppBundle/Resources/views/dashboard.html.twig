@@ -1,0 +1,49 @@
+{% extends '@App/base.html.twig' %}
+
+{% set active_item = 'dashboard' %}
+
+{% block content %}
+    <table class="ui table">
+        <thead class="center aligned">
+            <tr>
+                <th colspan="3">{% trans %}Last transports{% endtrans %}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if transports is empty %}
+                <tr>
+                    <td class="fluid">
+                        <div class="ui warning message">
+                            {% trans %}You do not have any transports{% endtrans %}
+                        </div>
+                    </td>
+                </tr>
+            {% else %}
+                {% for transport in transports %}
+                    <tr>
+                        <td class="center aligned">{{ transport.endDate|date('Y-m-d') }}<br/>{{ transport.endDate|date('H:i') }}</td>
+                        <td class="collapsing"><i class="truck large circular inverted blue icon"></i></td>
+                        <td>
+                            <div class="description">
+                                {% trans %}Realized transport with ID{% endtrans %}: <b>{{ transport.identificator }}</b><br/>
+                                {% trans %}Transport a cargo{% endtrans %} <b>{{ transport.cargo|capitalize }}</b> {% trans %}from{% endtrans %} <b>{{ transport.startCity|capitalize }}</b> {% trans %}to{% endtrans %} <b>{{ transport.endCity|capitalize }}</b>.<br/>
+                                {% trans %}Mileage{% endtrans %} <b>{{ transport.distance }} KM</b> {% trans %}with a cargo weighing{% endtrans %} <b>{{ transport.weight }} KG</b>
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+            {% endif %}
+        </tbody>
+    </table>
+{% endblock %}
+
+{% block extraJs %}
+    <script>
+        $('.description').readmore({
+            speed: 75,
+            collapsedHeight: 37,
+            moreLink: '<a href=""><i class="add square icon"></i>{% trans %}Show more{% endtrans %}</a>',
+            lessLink: '<a href=""><i class="minus square icon"></i>{% trans %}Show less{% endtrans %}</a>'
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends '@App/base.html.twig' %}
+
+{% set active_item = 'profile_show' %}
+
+{% block content %}
+    <div class="ui grid">
+        <div class="six wide column">
+            <h2 class="ui blue header">{{ app.user.username|capitalize }}</h2>
+            <center><img class="ui medium circular image" src="{{ asset('assets/images/avatars/') }}{{ app.user.avatar }}.jpg"></center>
+        </div>
+        <div class="ten wide left aligned column">
+            <h2 class="ui blue header">{% trans %}Your data{% endtrans %}: </h2>
+            <div class="ui form">
+                <div class="two fields">
+                    <div class="field">
+                        <label>Login: </label>
+                        <div class="ui left icon input">
+                            <i class="user icon"></i>
+                            <input type="text" value="{{ app.user.username }}" disabled>
+                        </div>
+
+                    </div>
+                    <div class="field">
+                        <label>{% trans %}Password{% endtrans %}: </label>
+                        <div class="ui left icon input">
+                            <i class="lock icon"></i>
+                            <input type="password" value="EasterEgg" disabled>
+                        </div>
+                    </div>
+                </div>
+                <div class="two fields">
+                    <div class="field">
+                        <label>{% trans %}Email address{% endtrans %}: </label>
+                        <div class="ui left icon input">
+                            <i class="mail icon"></i>
+                            <input type="text" value="{{ app.user.email }}" disabled>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label>{% trans %}Position{% endtrans %}: </label>
+                        <div class="ui left icon input">
+                            <i class="star icon"></i>
+
+                            <input type="text" value="{{ app.user.roles|join("")|trans }}" disabled>
+                        </div>
+                    </div>
+                </div>
+                <a class="ui blue large button" href="{{ path('app_user_password_change') }}"><i class="lock icon"></i>{% trans %}Change password{% endtrans %}</a>
+                <a class="ui blue large disabled button"><i class="mail icon"></i>{% trans %}Change email{% endtrans %}</a>
+                <a class="ui blue large button" href="{{ path('app_user_avatar_change') }}"><i class="adjust icon"></i>{% trans %}Change avatar{% endtrans %}</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends '@App/base.html.twig' %}
+
+{% set active_item = 'users_browse' %}
+
+{% block content %}
+    {% for user in users %}
+        <div class="ui small modal {{ user.id }}">
+            <div class="header">{% trans %}Terminating a employee{% endtrans %}</div>
+            <div class="content">
+                <p>{% trans %}Are you sure want to terminate this employee{% endtrans %}?</p>
+            </div>
+            <div class="actions">
+                <a class="ui positive button">{% trans %}No{% endtrans %}</a>
+                <a href="{{ path('app_user_delete', {'id': user.id}) }}" class="ui negative right labeled icon button">
+                    {% trans %}Terminate{% endtrans %}
+                    <i class="checkmark icon"></i>
+                </a>
+            </div>
+        </div>
+    {% endfor %}
+
+    <table class="ui celled left aligned table">
+        <thead class="center aligned">
+        <tr>
+            <th>{% trans %}Employee{% endtrans %}</th>
+            <th>{% trans %}Actions{% endtrans %}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>
+                    <h4 class="ui image header">
+                        <img src="{{ asset('assets/images/avatars/') }}{{ user.avatar }}.jpg" class="ui mini rounded image">
+                        <div class="content">
+                            {{ user.username|capitalize }}
+                            <div class="sub header">{{ user.roles|join("")|trans }}
+                            </div>
+                    </h4>
+                </td>
+                <td>
+                    <a href="{{ path('app_transport_user', {'id': user.id}) }}" class="ui blue horizontal large label"><i class="truck icon"></i>{% trans %}Show all transports{% endtrans %}</a>
+                    <a href="{{ path('app_user_role_change', {'id': user.id}) }}" class="ui orange horizontal large label"><i class="star icon"></i>{% trans %}Change position{% endtrans %}</a>
+                    <a onclick="showModal({{ user.id }})" class="ui red horizontal large label"><i class="remove circle icon"></i>{% trans %}Terminate{% endtrans %}</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
+{% block extraJs %}
+    <script>
+        function showModal(id) {
+            $('.small.modal.' + id)
+                    .modal('show')
+            ;
+        }
+    </script>
+{% endblock %}
+

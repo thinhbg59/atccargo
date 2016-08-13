@@ -1,0 +1,50 @@
+AppBundle\Entity\Transport:
+    type: entity
+    table: Transports
+    repositoryClass: AppBundle\Repository\TransportRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        userId:
+            type: integer
+        identificator:
+            type: string
+            length: 255
+        startCity:
+            type: string
+            length: 255
+        endCity:
+            type: string
+            length: 255
+        startDate:
+            type: datetime
+        endDate:
+            type: datetime
+        cargo:
+            type: string
+            length: 255
+        distance:
+            type: integer
+        weight:
+            type: integer
+        damage:
+            type: integer
+        burnedFuel:
+            type: integer
+        fueledFuel:
+            type: integer
+        country:
+            type: string
+            length: 255
+        score:
+            type: integer
+        screenshot:
+            type: string
+            length: 255
+        active:
+            type: smallint
+    lifecycleCallbacks: {  }

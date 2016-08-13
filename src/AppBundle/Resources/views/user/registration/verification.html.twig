@@ -1,0 +1,43 @@
+{% extends "@App/base.html.twig" %}
+
+{% block content %}
+    <div class="ui center aligned segment">
+        <div class="ui center aligned grid">
+            <div class="ui six wide column">
+                <h2 class="ui blue image header">
+                    <img src="{{ asset('assets/images/logo.png') }}" class="image">
+                    <div class="content">
+                        {% trans %}Enter registration code{% endtrans %}
+                    </div>
+                </h2>
+                {{ form_start(form, {'attr': {'class': 'ui large form'}}) }}
+                <div class="ui stacked segment">
+                    <div class="field">
+                        <div class="ui left icon input">
+                            <i class="mail icon"></i>
+                            {{ form_widget(form.email, {'attr': {'placeholder': 'Email address'}}) }}
+                        </div>
+                    </div>
+                    {{ form_errors(form.email) }}
+
+                    <div class="field">
+                        <div class="ui left icon input">
+                            <i class="key icon"></i>
+                            {{ form_widget(form.code, {'attr': {'placeholder': 'Code'}}) }}
+                        </div>
+                    </div>
+                    {{ form_errors(form.code) }}
+
+                    {% for flash_message in app.session.flashBag.get('error') %}
+                        <div class="ui negative message">
+                            {{ flash_message|trans }}
+                        </div>
+                    {% endfor %}
+
+                    <button type="submit" class="ui fluid large blue submit button">{% trans %}Check code{% endtrans %}</input>
+                </div>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

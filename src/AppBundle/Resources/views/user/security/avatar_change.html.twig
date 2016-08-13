@@ -1,0 +1,80 @@
+{% extends '@App/base.html.twig' %}
+
+{% set active_item = 'profile_show' %}
+
+{% block extraCss %}
+    <style>
+        input[type="radio"] {
+            display: none !important;
+        }
+
+        label {
+            opacity: 0.5;
+        }
+
+        #avatar_avatar_0:checked + label, #avatar_avatar_1:checked + label, #avatar_avatar_2:checked + label, #avatar_avatar_3:checked + label, #avatar_avatar_4:checked + label, #avatar_avatar_5:checked + label, #avatar_avatar_6:checked + label, #avatar_avatar_7:checked + label, #avatar_avatar_8:checked + label {
+            opacity: 1;
+        }
+
+        label {
+            opacity: 0.5;
+            cursor: pointer;
+        }
+    </style>
+{% endblock %}
+
+{% form_theme form _self %}
+
+{%- block form_label -%}
+    {% if label is not same as(false) -%}
+        {% if not compound -%}
+            {% set label_attr = label_attr|merge({'for': id}) %}
+        {%- endif -%}
+        {% if required -%}
+            {% set label_attr = label_attr|merge({'class': (label_attr.class|default('') ~ ' required')|trim}) %}
+        {%- endif -%}
+        {% if label is empty -%}
+            {%- if label_format is not empty -%}
+                {% set label = label_format|replace({
+                '%name%': name,
+                '%id%': id,
+                }) %}
+            {%- else -%}
+                {% set label = name|humanize %}
+            {%- endif -%}
+        {%- endif -%}
+        <label{% for attrname, attrvalue in label_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}><img class="ui circular image" src="{{ asset('assets/images/avatars/') }}{{ id|last }}.jpg">{{ translation_domain is same as(false) ? label : label|trans({}, translation_domain) }}</label>
+    {%- endif -%}
+{%- endblock form_label -%}
+
+{% block content %}
+    <div class="ui center aligned segment">
+        <div class="ui center aligned grid">
+            <div class="ui six wide column">
+                <h2 class="ui blue image header">
+                    <img src="{{ asset('assets/images/logo.png') }}" class="image">
+                    <div class="content">
+                        {% trans %}Changing avatar{% endtrans %}
+                    </div>
+                </h2>
+                {{ form_start(form, {'attr': {'class': 'ui large form'}}) }}
+                <div class="ui stacked segment">
+                    {% for flash_message in app.session.flashBag.get('notice') %}
+                        <div class="ui positive message">
+                            {{ flash_message|trans }}
+                        </div>
+                    {% endfor %}
+                    <div class="ui segment">
+                        <div class="ui tiny images">
+                            {{ form_widget(form.avatar) }}
+                        </div>
+
+                    </div>
+                    {{ form_errors(form.avatar) }}
+                    <input type="submit" class="ui fluid large blue submit button" value="{% trans %}Change{% endtrans %}">
+                </div>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,499 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="menu_item.driver.card">
+                <source>Driver card</source>
+                <target>Karta kierowcy</target>
+            </trans-unit>
+            <trans-unit id="menu.item.report.new.transport">
+                <source>Report new transport</source>
+                <target>Zgłoś transport</target>
+            </trans-unit>
+            <trans-unit id="menu.item.your.transports">
+                <source>Your transports</source>
+                <target>Twoje transporty</target>
+            </trans-unit>
+            <trans-unit id="menu.item.list.of.drivers">
+                <source>List of drivers</source>
+                <target>Lista kierowców</target>
+            </trans-unit>
+            <trans-unit id="menu.item.driver.statistics">
+                <source>Driver statistics</source>
+                <target>Statystyki kierowców</target>
+            </trans-unit>
+            <trans-unit id="menu.item.dropdown_item_show.profile">
+                <source>Show profile</source>
+                <target>Pokaż profil</target>
+            </trans-unit>
+            <trans-unit id="menu.item.dropdown_item_add.employee">
+                <source>Add employee</source>
+                <target>Dodaj pracownika</target>
+            </trans-unit>
+            <trans-unit id="menu.item.dropdown_item_browse.employees">
+                <source>Browse employees</source>
+                <target>Przeglądaj kierowców</target>
+            </trans-unit>
+            <trans-unit id="menu.item.dropdown_item_browse_transports">
+                <source>Browse transports</source>
+                <target>Przeglądaj transporty</target>
+            </trans-unit>
+            <trans-unit id="menu.item.dropdown_item_logout">
+                <source>Logout</source>
+                <target>Wyloguj się</target>
+            </trans-unit>
+
+            <trans-unit id="segment.statistics.header_made.transports">
+                <source>Made transports</source>
+                <target>Wykonanych zleceń</target>
+            </trans-unit>
+            <trans-unit id="segment.statistics.header_earned.money">
+                <source>Earned money</source>
+                <target>Zarobionych pieniędzy</target>
+            </trans-unit>
+            <trans-unit id="segment.statistics.header_travelled.distance">
+                <source>Travelled distance</source>
+                <target>Przejechany dystans</target>
+            </trans-unit>
+            <trans-unit id="segment.statistics.header_fuel.burned">
+                <source>Fuel burned</source>
+                <target>Spalone paliwo</target>
+            </trans-unit>
+
+
+
+
+            <trans-unit id="segment.header_your.data">
+                <source>Your data</source>
+                <target>Twoje dane</target>
+            </trans-unit>
+            <trans-unit id="segment.header_adding.a.employee">
+                <source>Adding a employee</source>
+                <target>Dodawanie pracownika</target>
+            </trans-unit>
+            <trans-unit id="segment.header_reporting.transport">
+                <source>Reporting transport</source>
+                <target>Zgłaszanie transportu</target>
+            </trans-unit>
+            <trans-unit id="segment.header_changing.a.position">
+                <source>Changing a position</source>
+                <target>Zmienianie stanowiska</target>
+            </trans-unit>
+            <trans-unit id="segment.header_login.to.your.account">
+                <source>Login to your account</source>
+                <target>Zaloguj się na swoje konto</target>
+            </trans-unit>
+            <trans-unit id="segment.header_complete.your.registration">
+                <source>Complete your registration</source>
+                <target>Dokończ swoją rejestrację</target>
+            </trans-unit>
+
+
+
+
+
+            <trans-unit id="table.header_last.transports">
+                <source>Last transports</source>
+                <target>Ostatnie transporty</target>
+            </trans-unit>
+
+
+            <trans-unit id="table.td_start.date">
+                <source>Start date</source>
+                <target>Data wyjazdu</target>
+            </trans-unit>
+            <trans-unit id="table.td_cargo">
+                <source>Cargo</source>
+                <target>Towar</target>
+            </trans-unit>
+            <trans-unit id="table.td_weight">
+                <source>Weight</source>
+                <target>Ciężar</target>
+            </trans-unit>
+            <trans-unit id="table.td_distance">
+                <source>Distance</source>
+                <target>Dystans</target>
+            </trans-unit>
+            <trans-unit id="table.td_screenshot">
+                <source>Screenshot</source>
+                <target>Zrzut ekranu</target>
+            </trans-unit>
+            <trans-unit id="table.td_start.city">
+                <source>Start city</source>
+                <target>Miasto startowe</target>
+            </trans-unit>
+            <trans-unit id="table.td_end.city">
+                <source>End city</source>
+                <target>Miasto docelowe</target>
+            </trans-unit>
+            <trans-unit id="table.td_identificator">
+                <source>Identificator</source>
+                <target>Identyfikator</target>
+            </trans-unit>
+            <trans-unit id="table.td_driver">
+                <source>Driver</source>
+                <target>Kierowca</target>
+            </trans-unit>
+            <trans-unit id="table.td_burned.fuel">
+                <source>Burned fuel</source>
+                <target>Spalone paliwo</target>
+            </trans-unit>
+            <trans-unit id="table.td_travelled.distance">
+                <source>Travelled distance</source>
+                <target>Przejechany dystans</target>
+            </trans-unit>
+            <trans-unit id="table.td_made.transports">
+                <source>Made transports</source>
+                <target>Wykonanych zleceń</target>
+            </trans-unit>
+            <trans-unit id="table.td_earned.money">
+                <source>Earned money</source>
+                <target>Zarobionych pieniędzy</target>
+            </trans-unit>
+            <trans-unit id="table.td_money">
+                <source>Money</source>
+                <target>Zarobek</target>
+            </trans-unit>
+            <trans-unit id="table.td_actions">
+                <source>Actions</source>
+                <target>Akcje</target>
+            </trans-unit>
+            <trans-unit id="table.td_employee">
+                <source>Employee</source>
+                <target>Pracownik</target>
+            </trans-unit>
+
+
+
+
+
+            <trans-unit id="message.warning_you.do.not.have.any.transports">
+                <source>You do not have any transports</source>
+                <target>Nie posiadasz żadnych transportów</target>
+            </trans-unit>
+
+
+
+
+
+
+
+            <trans-unit id="form.header_informations.about.transport">
+                <source>Informations about transport</source>
+                <target>Informacje o transporcie</target>
+            </trans-unit>
+            <trans-unit id="form.header_informations.about.refueling">
+                <source>Informations about refueling</source>
+                <target>Informacje o tankowaniu</target>
+            </trans-unit>
+
+
+
+
+
+            <trans-unit id="form.label_start.city">
+                <source>Start city</source>
+                <target>Miasto startowe</target>
+            </trans-unit>
+            <trans-unit id="form.label_destination.city">
+                <source>Destination city</source>
+                <target>Miasto docelowe</target>
+            </trans-unit>
+            <trans-unit id="form.label_cargo">
+                <source>Cargo</source>
+                <target>Ładunek</target>
+            </trans-unit>
+            <trans-unit id="form.label_weight">
+                <source>Weight</source>
+                <target>Ciężar</target>
+            </trans-unit>
+            <trans-unit id="form.label_distance">
+                <source>Distance</source>
+                <target>Dystans</target>
+            </trans-unit>
+            <trans-unit id="form.label_burned.fuel">
+                <source>Burned fuel</source>
+                <target>Spalone paliwo</target>
+            </trans-unit>
+            <trans-unit id="form.label_damage.status">
+                <source>Damage status</source>
+                <target>Uszkodzenia</target>
+            </trans-unit>
+            <trans-unit id="form.label_start.date">
+                <source>Start date</source>
+                <target>Data wyjazdu</target>
+            </trans-unit>
+            <trans-unit id="form.label_end.date">
+                <source>End date</source>
+                <target>Data przyjazdu</target>
+            </trans-unit>
+            <trans-unit id="form.label_country">
+                <source>Country</source>
+                <target>Kraj</target>
+            </trans-unit>
+            <trans-unit id="form.label_amount">
+                <source>Amount</source>
+                <target>Ilosć</target>
+            </trans-unit>
+            <trans-unit id="form.label_login">
+                <source>Login</source>
+                <target>Login</target>
+            </trans-unit>
+            <trans-unit id="form.label_email.address">
+                <source>Email address</source>
+                <target>Adres email</target>
+            </trans-unit>
+            <trans-unit id="form.label_password">
+                <source>Password</source>
+                <target>Hasło</target>
+            </trans-unit>
+            <trans-unit id="form.label_position">
+                <source>Position</source>
+                <target>Stanowisko</target>
+            </trans-unit>
+
+
+
+
+            <trans-unit id="form.placeholder_start.city">
+                <source>Start city</source>
+                <target>Miasto startowe</target>
+            </trans-unit>
+            <trans-unit id="form.placeholder_destination_city">
+                <source>Destination city</source>
+                <target>Miasto docelowe</target>
+            </trans-unit>
+            <trans-unit id="form.placeholder_cargo">
+                <source>Cargo</source>
+                <target>Towar</target>
+            </trans-unit>
+            <trans-unit id="form.placeholder_screenshot">
+                <source>Select screenshot</source>
+                <target>Wybierz zrut ekranu</target>
+            </trans-unit>
+            <trans-unit id="form.placeholder_country">
+                <source>Country</source>
+                <target>Kraj</target>
+            </trans-unit>
+            <trans-unit id="form.placeholder_email">
+                <source>Email address</source>
+                <target>Adres email</target>
+            </trans-unit>
+            <trans-unit id="form.placeholder_position">
+                <source>Position</source>
+                <target>Stanowisko</target>
+            </trans-unit>
+            <trans-unit id="form.placeholder_login">
+                <source>Username</source>
+                <target>Nazwa użytkownika</target>
+            </trans-unit>
+            <trans-unit id="form.placeholder_password">
+                <source>Password</source>
+                <target>Hasło</target>
+            </trans-unit>
+            <trans-unit id="form.placeholder_code">
+                <source>Code</source>
+                <target>Kod</target>
+            </trans-unit>
+            <trans-unit id="form.placeholder_password.repeat">
+                <source>Repeat password</source>
+                <target>Powtórz hasło</target>
+            </trans-unit>
+
+
+
+
+
+
+
+            <trans-unit id="button_report">
+                <source>Report</source>
+                <target>Zgłoś</target>
+            </trans-unit>
+            <trans-unit id="button_register">
+                <source>Register</source>
+                <target>Zarejestruj</target>
+            </trans-unit>
+             <trans-unit id="button_check.code">
+                <source>Check code</source>
+                <target>Sprawdź kod</target>
+            </trans-unit>
+            <trans-unit id="button_show.transports">
+                <source>Show transports</source>
+                <target>Pokaż transporty</target>
+            </trans-unit>
+            <trans-unit id="button_change.password">
+                <source>Change password</source>
+                <target>Zmień hasło</target>
+            </trans-unit>
+            <trans-unit id="button_change.email">
+                <source>Change email</source>
+                <target>Zmień email</target>
+            </trans-unit>
+            <trans-unit id="button_change.avatar">
+                <source>Change avatar</source>
+                <target>Zmień avatar</target>
+            </trans-unit>
+            <trans-unit id="button_add.employee">
+                <source>Add employee</source>
+                <target>Dodaj pracownika</target>
+            </trans-unit>
+            <trans-unit id="button_show.all.transports">
+                <source>Show all transports</source>
+                <target>Pokaż wszystkie transporty</target>
+            </trans-unit>
+            <trans-unit id="button_change.position">
+                <source>Change position</source>
+                <target>Zmień stanowisko</target>
+            </trans-unit>
+            <trans-unit id="button_terminate">
+                <source>Terminate</source>
+                <target>Zwolnij</target>
+            </trans-unit>
+            <trans-unit id="button_no">
+                <source>No</source>
+                <target>Nie</target>
+            </trans-unit>
+            <trans-unit id="button_approve">
+                <source>Approve</source>
+                <target>Zatwierdź</target>
+            </trans-unit>
+            <trans-unit id="button_reject">
+                <source>Reject</source>
+                <target>Odrzuć</target>
+            </trans-unit>
+            <trans-unit id="button_activate">
+                <source>Activate</source>
+                <target>Aktywuj</target>
+            </trans-unit>
+            <trans-unit id="button_delete">
+                <source>Delete</source>
+                <target>Usuń</target>
+            </trans-unit>
+            <trans-unit id="button_deactivate">
+                <source>Deactivate</source>
+                <target>Dezaktywuj</target>
+            </trans-unit>
+            <trans-unit id="button_login">
+                <source>Login</source>
+                <target>Zaloguj</target>
+            </trans-unit>
+
+
+
+
+
+
+
+
+
+
+
+
+            <trans-unit id="modal.header_terminating.a.employee">
+                <source>Terminating a employee</source>
+                <target>Zwalnianie pracownika</target>
+            </trans-unit>
+            <trans-unit id="modal.body.terminating.a.employee">
+                <source>Are you sure want to terminate this employee</source>
+                <target>Czy jesteś pewien że chcesz zwolnić tego pracownika</target>
+            </trans-unit>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <trans-unit id="hello">
+                <source>Hello</source>
+                <target>Witaj</target>
+            </trans-unit>
+            <trans-unit id="a_show.more">
+                <source>Show more</source>
+                <target>Pokaż więcej</target>
+            </trans-unit>
+            <trans-unit id="a_show.less">
+                <source>Show less</source>
+                <target>Pokaż mniej</target>
+            </trans-unit>
+            <trans-unit id="a_open">
+                <source>Open</source>
+                <target>Otwórz</target>
+            </trans-unit>
+            <trans-unit id="a_register.now">
+                <source>Register now</source>
+                <target>Zarejestruj się</target>
+            </trans-unit>
+
+
+
+
+
+            <trans-unit id="text_do.you.have.a.registration.code">
+                <source>Do you have a registration code</source>
+                <target>Posiadasz kod rejestracyjny</target>
+            </trans-unit>
+            <trans-unit id="text_realized.transport.with.id">
+                <source>Realized transport with ID</source>
+                <target>Zrealizowanie transportu o identyfikatorze</target>
+            </trans-unit>
+            <trans-unit id="text_transport.a.cargo">
+                <source>Transport a cargo</source>
+                <target>Transport towaru</target>
+            </trans-unit>
+            <trans-unit id="text_from">
+                <source>from</source>
+                <target>z</target>
+            </trans-unit>
+            <trans-unit id="text_to">
+                <source>to</source>
+                <target>do</target>
+            </trans-unit>
+            <trans-unit id="text_mileage">
+                <source>Mileage</source>
+                <target>Przebyty dystans</target>
+            </trans-unit>
+            <trans-unit id="text_with.a.cargo.weighing">
+                <source>with a cargo weighing</source>
+                <target>z towarem o ciężarze</target>
+            </trans-unit>
+
+
+
+
+
+            <trans-unit id="role_boss">
+                <source>ROLE_BOSS</source>
+                <target>Szef</target>
+            </trans-unit>
+            <trans-unit id="role_viceboss">
+                <source>ROLE_VICEBOSS</source>
+                <target>Vice szef</target>
+            </trans-unit>
+            <trans-unit id="role_dispatcher">
+                <source>ROLE_DISPATCHER</source>
+                <target>Dyspozytor</target>
+            </trans-unit>
+            <trans-unit id="role_driver">
+                <source>ROLE_DRIVER</source>
+                <target>Kierowca</target>
+            </trans-unit>
+            <trans-unit id="role_demo">
+                <source>ROLE_DEMO</source>
+                <target>Okres testowy</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
