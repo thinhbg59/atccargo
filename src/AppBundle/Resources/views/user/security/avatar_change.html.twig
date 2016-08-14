@@ -24,28 +24,36 @@
 {% endblock %}
 
 {% form_theme form _self %}
-
-{%- block form_label -%}
-    {% if label is not same as(false) -%}
-        {% if not compound -%}
-            {% set label_attr = label_attr|merge({'for': id}) %}
-        {%- endif -%}
-        {% if required -%}
-            {% set label_attr = label_attr|merge({'class': (label_attr.class|default('') ~ ' required')|trim}) %}
-        {%- endif -%}
-        {% if label is empty -%}
-            {%- if label_format is not empty -%}
-                {% set label = label_format|replace({
-                '%name%': name,
-                '%id%': id,
-                }) %}
-            {%- else -%}
-                {% set label = name|humanize %}
+    {%- block form_label -%}
+        {% if label is not same as(false) -%}
+            {% if not compound -%}
+                {% set label_attr = label_attr|merge({'for': id}) %}
             {%- endif -%}
+            {% if required -%}
+                {% set label_attr = label_attr|merge({'class': (label_attr.class|default('') ~ ' required')|trim}) %}
+            {%- endif -%}
+            {% if label is empty -%}
+                {%- if label_format is not empty -%}
+                    {% set label = label_format|replace({
+                    '%name%': name,
+                    '%id%': id,
+                    }) %}
+                {%- else -%}
+                    {% set label = name|humanize %}
+                {%- endif -%}
+            {%- endif -%}
+            <label{% for attrname, attrvalue in label_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}><img class="ui circular image" src="{{ asset('assets/images/avatars/') }}{{ id|last }}.jpg">{{ translation_domain is same as(false) ? label : label|trans({}, translation_domain) }}</label>
         {%- endif -%}
-        <label{% for attrname, attrvalue in label_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}><img class="ui circular image" src="{{ asset('assets/images/avatars/') }}{{ id|last }}.jpg">{{ translation_domain is same as(false) ? label : label|trans({}, translation_domain) }}</label>
-    {%- endif -%}
-{%- endblock form_label -%}
+    {%- endblock form_label -%}
+    {%- block form_errors -%}
+        {%- if errors|length > 0 -%}
+            <div class="ui negative message">
+                {%- for error in errors -%}
+                    {{ error.message }}
+                {%- endfor -%}
+            </div>
+        {%- endif -%}
+    {%- endblock form_errors -%}
 
 {% block content %}
     <div class="ui center aligned segment">
@@ -54,7 +62,7 @@
                 <h2 class="ui blue image header">
                     <img src="{{ asset('assets/images/logo.png') }}" class="image">
                     <div class="content">
-                        {% trans %}Changing avatar{% endtrans %}
+                        {% trans %}Changing a avatar{% endtrans %}
                     </div>
                 </h2>
                 {{ form_start(form, {'attr': {'class': 'ui large form'}}) }}
@@ -64,7 +72,7 @@
                             {{ flash_message|trans }}
                         </div>
                     {% endfor %}
-                    <div class="ui segment">
+                     <div class="ui segment">
                         <div class="ui tiny images">
                             {{ form_widget(form.avatar) }}
                         </div>

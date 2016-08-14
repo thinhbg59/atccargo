@@ -9,7 +9,6 @@ AppBundle\Entity\ChangePassword:
         password:
             - Symfony\Component\Security\Core\Validator\Constraints\UserPassword:
                 message: changePassword.password.password
-
         plainPassword:
             - NotBlank: ~
             - Length:
@@ -46,7 +45,7 @@ AppBundle\Entity\Transport:
             - NotBlank: ~
             - DateTime:
                 format: Y-m-d H:i
-                message: transport.startDate.datetime
+                message: transport.endDate.datetime
         cargo:
             - NotBlank: ~
         distance:
@@ -73,9 +72,11 @@ AppBundle\Entity\Transport:
             - NotBlank: ~
             - Type:
                 type: integer
+                message: transport.burnedFuel.type
         fueledFuel:
             - Type:
                 type: integer
+                message: transport.fueledFuel.type
         screenshot:
             - NotBlank: ~
             - File:
@@ -83,3 +84,23 @@ AppBundle\Entity\Transport:
                 maxSizeMessage: transport.screenshot.file_max
                 mimeTypes: [image/jpeg, image/jpg, image/png]
                 mimeTypesMessage: transport.screenshot.mimeTypes
+AppBundle\Entity\User:
+    properties:
+        username:
+            - Length:
+                min: 3
+                minMessage: user.username.length_min
+                max: 10
+                maxMessage: user.username.length_max
+        email:
+            - Email:
+                message: user.email.email
+                checkMX: true
+        avatar:
+            - Choice:
+                choices: [0, 1, 2, 3, 4, 5, 6, 7, 8]
+                message: user.avatar.choice
+        plainPassword:
+            - Length:
+                min: 6
+                minMessage: user.plainPassword.length_min

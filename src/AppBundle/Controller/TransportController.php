@@ -7,6 +7,7 @@ use AppBundle\Entity\Transport;
 use AppBundle\Form\TransportType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class TransportController extends Controller
 {
@@ -73,7 +74,7 @@ class TransportController extends Controller
             return $this->redirect($uri);
         }
 
-        return $this->redirectToRoute('dashboard');
+        return $this->redirectToRoute('app_dashboard');
     }
 
     public function deactivateAction(Request $request, $id)
@@ -93,12 +94,14 @@ class TransportController extends Controller
             return $this->redirect($uri);
         }
 
-        return $this->redirectToRoute('dashboard');
+        return $this->redirectToRoute('app_dashboard');
     }
 
     public function deleteAction(Request $request, $id)
     {
-        if ($this->get('security.authorization_checker')->isGranted('ROLE_BOSS')) {
+        $referer = $request->headers->get('referer');
+
+        if (preg_match('@/transports/browse@', $referer) && $this->get('security.authorization_checker')->isGranted('ROLE_DISPATCHER') || $this->get('security.authorization_checker')->isGranted('ROLE_BOSS')) {
             $em = $this->getDoctrine()->getManager();
 
             $transport = $em
@@ -113,7 +116,7 @@ class TransportController extends Controller
             return $this->redirect($uri);
         }
 
-        return $this->redirectToRoute('dashboard');
+        return $this->redirectToRoute('app_dashboard');
     }
 
     public function getAction()

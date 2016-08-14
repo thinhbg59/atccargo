@@ -65,6 +65,10 @@ class RegistrationController extends Controller
 
     public function verificateAction(Request $request)
     {
+        if ($this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
+            return $this->redirectToRoute('app_dashboard');
+        }
+
         $invitation = $this->get('session')->get('invitation');
         if (isset($invitation)) {
             return $this->redirectToRoute('app_user_register');

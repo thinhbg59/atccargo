@@ -79,6 +79,14 @@
                 <source>Changing a position</source>
                 <target>Zmienianie stanowiska</target>
             </trans-unit>
+            <trans-unit id="segment.header_changing.a.password">
+                <source>Changing a password</source>
+                <target>Zmienianie hasła</target>
+            </trans-unit>
+            <trans-unit id="segment.header_changing.a.avatar">
+                <source>Changing a avatar</source>
+                <target>Zmienianie avatara</target>
+            </trans-unit>
             <trans-unit id="segment.header_login.to.your.account">
                 <source>Login to your account</source>
                 <target>Zaloguj się na swoje konto</target>
@@ -170,6 +178,34 @@
             <trans-unit id="message.warning_you.do.not.have.any.transports">
                 <source>You do not have any transports</source>
                 <target>Nie posiadasz żadnych transportów</target>
+            </trans-unit>
+            <trans-unit id="message.notice_invitation.has.been.sent">
+                <source>Invitation has been sent!</source>
+                <target>Zaproszenie zostało wysłane!</target>
+            </trans-unit>
+            <trans-unit id="message.notice_account.has.been.created">
+                <source>Account has been created!</source>
+                <target>Konto zostało utworzone!</target>
+            </trans-unit>
+            <trans-unit id="message.error_email.address.or.code.is.incorrect">
+                <source>Email address or code is incorrect!</source>
+                <target>Adres email lub kod jest niepoprawny!</target>
+            </trans-unit>
+            <trans-unit id="message.notice_transport.has.been.reported">
+                <source>Transport has been reported!</source>
+                <target>Transport został zgłoszony!</target>
+            </trans-unit>
+            <trans-unit id="message.notice_password.has.been.changed">
+                <source>Password has been changed!</source>
+                <target>Hasło zostało zmienione!</target>
+            </trans-unit>
+            <trans-unit id="message.notice_avatar.has.been.changed">
+                <source>Avatar has been changed!</source>
+                <target>Avatar został zmieniony!</target>
+            </trans-unit>
+            <trans-unit id="message.notice_position.has.been.changed">
+                <source>Position has been changed!</source>
+                <target>Stanowisko zostało zmienione!</target>
             </trans-unit>
 
 
@@ -298,6 +334,14 @@
             <trans-unit id="form.placeholder_password.repeat">
                 <source>Repeat password</source>
                 <target>Powtórz hasło</target>
+            </trans-unit>
+            <trans-unit id="form.placeholder_current.password">
+                <source>Current password</source>
+                <target>Aktualne hasło</target>
+            </trans-unit>
+            <trans-unit id="form.placeholder_new.password">
+                <source>New password</source>
+                <target>Nowe hasło</target>
             </trans-unit>
 
 

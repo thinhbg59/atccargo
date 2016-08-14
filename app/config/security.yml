@@ -30,9 +30,22 @@ security:
             algorithm: bcrypt
 
     access_control:
-        - { path: ^/login,     roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/register,  roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/dashboard, roles: ROLE_DEMO }
+        - { path: ^/dashboard, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/profile, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/users, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/users/browse, roles: ROLE_BOSS }
+        - { path: ^/user/[0-9]+/change/role, roles: ROLE_BOSS }
+        - { path: ^/change/password, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/change/avatar, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/user/delete/, roles: ROLE_BOSS }
+        - { path: ^/transports/my, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/transport/report, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/transport/activate/[0-9]+, roles: ROLE_DISPATCHER }
+        - { path: ^/transport/deactivate/[0-9]+, roles: ROLE_BOSS }
+        - { path: ^/transports/browse, roles: ROLE_DISPATCHER }
+        - { path: ^/user/[0-9]+/transports, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/invitation/add, roles: ROLE_BOSS }
+        - { path: ^/invitation/add, roles: ROLE_BOSS }
 
     role_hierarchy:
         ROLE_BOSS:       ROLE_VICEBOSS

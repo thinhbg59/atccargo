@@ -93,7 +93,7 @@ class UserController extends Controller
 
             $this->addFlash(
                 'notice',
-                'Role has been changed!'
+                'Position has been changed!'
             );
 
             $uri = $request->headers->get('referer');

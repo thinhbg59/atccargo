@@ -2,6 +2,17 @@
 
 {% set active_item = 'user_browse' %}
 
+{% form_theme form _self %}
+    {%- block form_errors -%}
+        {%- if errors|length > 0 -%}
+            <div class="ui negative message">
+                {%- for error in errors -%}
+                    {{ error.message }}
+                {%- endfor -%}
+            </div>
+        {%- endif -%}
+    {%- endblock form_errors -%}
+
 {% block content %}
     <div class="ui center aligned grid">
         <div class="six wide column">
@@ -28,6 +39,7 @@
                         </div>
                     </div>
                 </div>
+                {{ form_errors(form.roles) }}
 
                 {% for flash_message in app.session.flashBag.get('notice') %}
                     <div class="ui positive message">

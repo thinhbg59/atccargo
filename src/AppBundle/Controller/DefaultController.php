@@ -10,7 +10,7 @@ class DefaultController extends Controller
 {
     public function selectAction()
     {
-        if ($this->get('security.authorization_checker')->isGranted('ROLE_DEMO')) {
+        if ($this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
             return $this->redirectToRoute('app_dashboard');
         }
 
