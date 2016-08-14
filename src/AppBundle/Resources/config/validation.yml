@@ -20,6 +20,19 @@ AppBundle\Entity\Invitation:
             - Email:
                 message: invitation.email.email
                 checkMX: true
+<<<<<<< HEAD
+=======
+        code:
+            - NotBlank: ~
+            - Type:
+                type: integer
+                message: invitation.code.type
+        roles:
+            - NotBlank: ~
+            - Choice:
+                choices: [boss, viceboss, dispatcher, driver, demo, szef, viceszef, dyspozytor, kierowca, okres testowy]
+                message: invitation.roles.choice
+>>>>>>> d5253b6d3a6f3bc3dddee106cc62ebda6d198473
 AppBundle\Entity\Transport:
     properties:
         startCity:
