@@ -1,0 +1,56 @@
+{% extends '@App/base.html.twig' %}
+
+{% set active_item = 'user_browse' %}
+
+{% form_theme form _self %}
+    {%- block form_errors -%}
+        {%- if errors|length > 0 -%}
+            <div class="ui negative message">
+                {%- for error in errors -%}
+                    {{ error.message }}
+                {%- endfor -%}
+            </div>
+        {%- endif -%}
+    {%- endblock form_errors -%}
+
+{% block content %}
+    <div class="ui center aligned grid">
+        <div class="six wide column">
+            <h1 class="ui blue image header">
+                <i class="blue square write icon"></i>
+                <div class="content">
+                    {% trans %}Changing a position{% endtrans %}
+                </div>
+            </h1>
+
+            <div class="ui stacked segment">
+                {{ form_start(form, {'attr': {'class': 'ui large form'}}) }}
+                <div class="field">
+                    <div class="ui selection dropdown">
+                        {{ form_row(form.roles, {'value': ''}) }}
+                        <i class="dropdown icon"></i>
+                        <div class="default text">{% trans %}Position{% endtrans %}</div>
+                        <div class="menu">
+                            <div class="item">{% trans %}ROLE_BOSS{% endtrans %}</div>
+                            <div class="item">{% trans %}ROLE_VICEBOSS{% endtrans %}</div>
+                            <div class="item">{% trans %}ROLE_DISPATCHER{% endtrans %}</div>
+                            <div class="item">{% trans %}ROLE_DRIVER{% endtrans %}</div>
+                            <div class="item">{% trans %}ROLE_DEMO{% endtrans %}</div>
+                        </div>
+                    </div>
+                </div>
+                {{ form_errors(form.roles) }}
+
+                {% for flash_message in app.session.flashBag.get('notice') %}
+                    <div class="ui positive message">
+                        {{ flash_message|trans }}
+                    </div>
+                {% endfor %}
+
+                <input type="submit" value="{% trans %}Change position{% endtrans %}" class="ui blue fluid large button">
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

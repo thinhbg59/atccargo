@@ -1,0 +1,54 @@
+# To get started with security, check out the documentation:
+# http://symfony.com/doc/current/book/security.html
+security:
+
+    # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
+    providers:
+        doctrine:
+            entity:
+                class: AppBundle:User
+                property: username
+
+    firewalls:
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        main:
+            anonymous: ~
+            form_login:
+                login_path: app_user_login
+                check_path: app_user_login
+            logout:
+                path: /logout
+                target: /
+            provider: doctrine
+
+    encoders:
+        AppBundle\Entity\User:
+            algorithm: bcrypt
+
+    access_control:
+        - { path: ^/dashboard, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/profile, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/users, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/users/browse, roles: ROLE_BOSS }
+        - { path: ^/user/[0-9]+/change/role, roles: ROLE_BOSS }
+        - { path: ^/change/password, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/change/avatar, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/user/delete/, roles: ROLE_BOSS }
+        - { path: ^/transports/my, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/transport/report, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/transport/activate/[0-9]+, roles: ROLE_DISPATCHER }
+        - { path: ^/transport/deactivate/[0-9]+, roles: ROLE_BOSS }
+        - { path: ^/transports/browse, roles: ROLE_DISPATCHER }
+        - { path: ^/user/[0-9]+/transports, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/invitation/add, roles: ROLE_BOSS }
+        - { path: ^/invitation/add, roles: ROLE_BOSS }
+
+    role_hierarchy:
+        ROLE_BOSS:       ROLE_VICEBOSS
+        ROLE_VICEBOSS:   ROLE_DISPATCHER
+        ROLE_DISPATCHER: ROLE_DRIVER
+        ROLE_DRIVER:     ROLE_DEMO

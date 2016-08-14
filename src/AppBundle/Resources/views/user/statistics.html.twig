@@ -1,0 +1,35 @@
+{% extends '@App/base.html.twig' %}
+
+{% set active_item = 'driver_statistics' %}
+
+{% block content %}
+    <table class="ui celled left aligned table">
+        <thead class="center aligned">
+        <tr>
+            <th>{% trans %}Driver{% endtrans %}</th>
+            <th>{% trans %}Burned fuel{% endtrans %}</th>
+            <th>{% trans %}Travelled distance{% endtrans %}</th>
+            <th>{% trans %}Made transports{% endtrans %}</th>
+            <th>{% trans %}Earned money{% endtrans %}</th>
+        </tr>
+        </thead>
+        {% for user in users %}
+            <tr>
+                <td>
+                    <h4 class="ui image header">
+                        <img src="{{ asset('assets/images/avatars/') }}{{ user.avatar }}.jpg" class="ui mini rounded image">
+                        <div class="content">
+                            {{ user.username|capitalize }}
+                            <div class="sub header">{{ user.roles|join("")|trans }}
+                            </div>
+                    </h4>
+                </td>
+                <td><i class="lightning icon"></i> {{ user.burnedFuel|number_format(0, '', ' ') }} L</td>
+                <td><i class="road icon"></i> {{ user.travelledDistance|number_format(0, '', ' ') }} KM</td>
+                <td><i class="cubes icon"></i> {{ user.madedTransports }}</td>
+                <td><i class="money icon"></i> {{ user.earnedMoney|number_format(2, ',', ' ') }} PLN</th>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

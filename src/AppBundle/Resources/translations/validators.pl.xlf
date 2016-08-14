@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="changeAvatar.avatar.choice">
+                <source>changeAvatar.avatar.choice</source>
+                <target>Wybierz poprawny avatar</target>
+            </trans-unit>
+            <trans-unit id="changePassword.password.password">
+                <source>changePassword.password.password</source>
+                <target>Hasło jest niepoprawne</target>
+            </trans-unit>
+            <trans-unit id="changePassword.plainPassword.length_min">
+                <source>changePassword.plainPassword.length_min</source>
+                <target>Hasło powinno mieć co najmniej 6 znaków</target>
+            </trans-unit>
+            <trans-unit id="invitation.email.email">
+                <source>invitation.email.email</source>
+                <target>Wprowadź poprawny adres email</target>
+            </trans-unit>
+            <trans-unit id="invitation.code.type">
+                <source>invitation.code.type</source>
+                <target>Kod powinien się składać tylko z cyfr</target>
+            </trans-unit>
+            <trans-unit id="invitation.roles.choice">
+                <source>invitation.roles.choice</source>
+                <target>Wybierz poprawne stanowisko</target>
+            </trans-unit>
+            <trans-unit id="transport.startDate.datetime">
+                <source>transport.startDate.datetime</source>
+                <target>Wprowadź poprawną datę</target>
+            </trans-unit>
+            <trans-unit id="transport.endDate.datetime">
+                <source>transport.endDate.datetime</source>
+                <target>Wprowadź poprawną datę</target>
+            </trans-unit>
+            <trans-unit id="transport.distance.type">
+                <source>transport.distance.type</source>
+                <target>Dystans powinien się składać tylko z cyfr</target>
+            </trans-unit>
+            <trans-unit id="transport.weight.type">
+                <source>transport.weight.type</source>
+                <target>Ciężar powinien się składać tylko z cyfr</target>
+            </trans-unit>
+            <trans-unit id="transport.burnedFuel.type">
+                <source>transport.burnedFuel.type</source>
+                <target>Spalone paliwo powinno się składać tylko z cyfr</target>
+            </trans-unit>
+            <trans-unit id="transport.fueledFuel.type">
+                <source>transport.fueledFuel.type</source>
+                <target>Paliwo powinno się składać tylko z cyfr</target>
+            </trans-unit>
+            <trans-unit id="transport.damage.type">
+                <source>transport.damage.type</source>
+                <target>Obrażenia powinne się składać tylko z cyfr</target>
+            </trans-unit>
+            <trans-unit id="transport.damage.range_min">
+                <source>transport.damage.range_min</source>
+                <target>Minimalna wartość to 0</target>
+            </trans-unit>
+            <trans-unit id="transport.damage.range_max">
+                <source>transport.damage.range_max</source>
+                <target>Maksymalna wartość to 100</target>
+            </trans-unit>
+            <trans-unit id="transport.screenshot.file_max">
+                <source>transport.screenshot.file_max</source>
+                <target>Plik jest zbyt duży, maksymalny rozmiar to 5 MB</target>
+            </trans-unit>
+            <trans-unit id="transport.screenshot.mimeTypes">
+                <source>transport.screenshot.mimeTypes</source>
+                <target>Poprawne formaty to .png, .jpg, .jpeg</target>
+            </trans-unit>
+            <trans-unit id="user.username.length_min">
+                <source>user.username.length_min</source>
+                <target>Nazwa użytkownika powinna mieć co najmniej 3 znaki</target>
+            </trans-unit>
+            <trans-unit id="user.username.length_max">
+                <source>user.username.length_max</source>
+                <target>Nazwa użytkownika powinna mieć maksymalnie 10 znaków</target>
+            </trans-unit>
+            <trans-unit id="user.email.email">
+                <source>user.email.email</source>
+                <target>Wprowadź poprawny adres email</target>
+            </trans-unit>
+            <trans-unit id="user.avatar.choice">
+                <source>user.avatar.choice</source>
+                <target>Wybierz poprawny avatar</target>
+            </trans-unit>
+            <trans-unit id="user.plainPassword.length_min">
+                <source>user.plainPassword.length_min</source>
+                <target>Hasło powinno mieć co najmniej 6 znaków</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

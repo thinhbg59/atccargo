@@ -1,0 +1,45 @@
+{% extends '@App/base.html.twig'%}
+
+{% set active_item = 'transport_browse' %}
+
+{% block content %}
+    <table class="ui celled left aligned table">
+        <thead class="center aligned">
+        <tr>
+            <th>{% trans %}Driver{% endtrans %}</th>
+            <th>{% trans %}Cargo{% endtrans %}</th>
+            <th>{% trans %}Money{% endtrans %}</th>
+            <th>{% trans %}Screenshot{% endtrans %}</th>
+            <th>{% trans %}Start city{% endtrans %}</th>
+            <th>{% trans %}End city{% endtrans %}</th>
+            <th>{% trans %}Start date{% endtrans %}</th>
+            <th>{% trans %}Actions{% endtrans %}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for transport in transports %}
+            <tr>
+                <td>
+                    <h4 class="ui image header">
+                        <img src="{{ asset('assets/images/avatars/') }}{{ transport.avatar }}.jpg" class="ui mini rounded image">
+                        <div class="content">
+                            {{ transport.username|capitalize }}
+                            <div class="sub header">{{ transport.roles|trans }}
+                            </div>
+                    </h4>
+                </td>
+                <td>{{ transport.cargo|capitalize }}</td>
+                <td>{{ transport.score|number_format(2, ',', ' ') }} PLN</td>
+                <td><a href="{{ asset('screenshots/') }}{{ transport.screenshot }}" target="_blank">{% trans %}Open{% endtrans %}</a></td>
+                <td>{{ transport.startCity|capitalize }}</td>
+                <td>{{ transport.endCity|capitalize }}</td>
+                <td>{{ transport.endDate|date('Y-m-d H:i') }}</td>
+                <td class="center aligned">
+                    <a class="ui green horizontal large label" href="{{ path('app_transport_activate', {'id': transport.id}) }}"><i class="check circle icon"></i>{% trans %}Approve{% endtrans %}</a>
+                    <a class="ui red horizontal large label" href="{{ path('app_transport_delete', {'id': transport.id}) }}"><i class="remove circle icon"></i>{% trans %}Reject{% endtrans %}</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

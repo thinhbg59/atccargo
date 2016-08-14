@@ -1,0 +1,34 @@
+{% extends '@App/base.html.twig' %}
+
+{% set active_item = 'transports_my' %}
+
+{% block content %}
+    <table class="ui celled center aligned table">
+        <thead class="center aligned">
+        <tr>
+            <th>{% trans %}Start date{% endtrans %}</th>
+            <th>{% trans %}Cargo{% endtrans %}</th>
+            <th>{% trans %}Weight{% endtrans %}</th>
+            <th>{% trans %}Distance{% endtrans %}</th>
+            <th>{% trans %}Screenshot{% endtrans %}</th>
+            <th>{% trans %}Start city{% endtrans %}</th>
+            <th>{% trans %}End city{% endtrans %}</th>
+            <th>{% trans %}Identificator{% endtrans %}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for transport in transports %}
+            <tr>
+                <td>{{ transport.endDate|date('Y-m-d H:i') }}</td>
+                <td>{{ transport.cargo|capitalize }}</td>
+                <td>{{ transport.weight|number_format(0, '', ' ') }} KG</td>
+                <td>{{ transport.distance|number_format(0, '', ' ') }} KM</td>
+                <td><a href="{{ asset('screenshots/') }}{{ transport.screenshot }}" target="_blank">Otwórz</a></td>
+                <td>{{ transport.startCity|capitalize }}</td>
+                <td>{{ transport.endCity|capitalize }}</td>
+                <td>{{ transport.identificator }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

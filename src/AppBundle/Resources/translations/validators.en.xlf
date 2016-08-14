@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="changeAvatar.avatar.choice">
+                <source>changeAvatar.avatar.choice</source>
+                <target>You must select avatar</target>
+            </trans-unit>
+            <trans-unit id="changePassword.password.password">
+                <source>changePassword.password.password</source>
+                <target>This password is incorrect</target>
+            </trans-unit>
+            <trans-unit id="changePassword.plainPassword.length_min">
+                <source>changePassword.plainPassword.length_min</source>
+                <target>The password must have at least 6 characters</target>
+            </trans-unit>
+            <trans-unit id="invitation.email.email">
+                <source>invitation.email.email</source>
+                <target>Enter a valid email address</target>
+            </trans-unit>
+            <trans-unit id="invitation.code.type">
+                <source>invitation.code.type</source>
+                <target>Code must consist digits only</target>
+            </trans-unit>
+            <trans-unit id="invitation.roles.choice">
+                <source>invitation.roles.choice</source>
+                <target>Select a valid role</target>
+            </trans-unit>
+            <trans-unit id="transport.startDate.datetime">
+                <source>transport.startDate.datetime</source>
+                <target>Enter valid date</target>
+            </trans-unit>
+            <trans-unit id="transport.endDate.datetime">
+                <source>transport.endDate.datetime</source>
+                <target>Enter valid date</target>
+            </trans-unit>
+            <trans-unit id="transport.distance.type">
+                <source>transport.distance.type</source>
+                <target>Distance must consist digits only</target>
+            </trans-unit>
+            <trans-unit id="transport.weight.type">
+                <source>transport.weight.type</source>
+                <target>Weight must consist digits only</target>
+            </trans-unit>
+            <trans-unit id="transport.burnedFuel.type">
+                <source>transport.burnedFuel.type</source>
+                <target>Burned fuel must consist digits only</target>
+            </trans-unit>
+            <trans-unit id="transport.fueledFuel.type">
+                <source>transport.fueledFuel.type</source>
+                <target>Fuel must consist digits only</target>
+            </trans-unit>
+            <trans-unit id="transport.damage.type">
+                <source>transport.damage.type</source>
+                <target>Damage must consist digits only</target>
+            </trans-unit>
+            <trans-unit id="transport.damage.range_min">
+                <source>transport.damage.range_min</source>
+                <target>Minimal value is a 0</target>
+            </trans-unit>
+            <trans-unit id="transport.damage.range_max">
+                <source>transport.damage.range_max</source>
+                <target>Maximum value is a 100</target>
+            </trans-unit>
+            <trans-unit id="transport.screenshot.file_max">
+                <source>transport.screenshot.file_max</source>
+                <target>File is too weight, max 5MB</target>
+            </trans-unit>
+            <trans-unit id="transport.screenshot.mimeTypes">
+                <source>transport.screenshot.mimeTypes</source>
+                <target>Correct formats are .png, .jpg, .jpeg</target>
+            </trans-unit>
+            <trans-unit id="user.username.length_min">
+                <source>user.username.length_min</source>
+                <target>The username must have at least 3 characters</target>
+            </trans-unit>
+            <trans-unit id="user.username.length_max">
+                <source>user.username.length_max</source>
+                <target>The username can be up to 6 characters</target>
+            </trans-unit>
+            <trans-unit id="user.email.email">
+                <source>user.email.email</source>
+                <target>Enter a valid email address</target>
+            </trans-unit>
+            <trans-unit id="user.avatar.choice">
+                <source>user.avatar.choice</source>
+                <target>You must select avatar</target>
+            </trans-unit>
+            <trans-unit id="user.plainPassword.length_min">
+                <source>user.plainPassword.length_min</source>
+                <target>The password must be at least 6 characters</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

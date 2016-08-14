@@ -1,0 +1,96 @@
+AppBundle\Entity\ChangeAvatar:
+    properties:
+        avatar:
+            - Choice:
+                choices: [0, 1, 2, 3, 4, 5, 6, 7, 8]
+                message: changeAvatar.avatar.choice
+AppBundle\Entity\ChangePassword:
+    properties:
+        password:
+            - Symfony\Component\Security\Core\Validator\Constraints\UserPassword:
+                message: changePassword.password.password
+        plainPassword:
+            - NotBlank: ~
+            - Length:
+                min: 6
+                minMessage: changePassword.plainPassword.length_min
+AppBundle\Entity\Invitation:
+    properties:
+        email:
+            - Email:
+                message: invitation.email.email
+                checkMX: true
+AppBundle\Entity\Transport:
+    properties:
+        startCity:
+            - NotBlank: ~
+        endCity:
+            - NotBlank: ~
+        startDate:
+            - NotBlank: ~
+            - DateTime:
+                format: Y-m-d H:i
+                message: transport.startDate.datetime
+        endDate:
+            - NotBlank: ~
+            - DateTime:
+                format: Y-m-d H:i
+                message: transport.endDate.datetime
+        cargo:
+            - NotBlank: ~
+        distance:
+            - NotBlank: ~
+            - Type:
+                type: integer
+                message: transport.distance.type
+        weight:
+            - NotBlank: ~
+            - Type:
+                type: integer
+                message: transport.weight.type
+        damage:
+            - NotBlank: ~
+            - Type:
+                type: integer
+                message: transport.damage.type
+            - Range:
+                min: 0
+                minMessage: transport.damage.range_min
+                max: 100
+                maxMessage: transport.damage.range_max
+        burnedFuel:
+            - NotBlank: ~
+            - Type:
+                type: integer
+                message: transport.burnedFuel.type
+        fueledFuel:
+            - Type:
+                type: integer
+                message: transport.fueledFuel.type
+        screenshot:
+            - NotBlank: ~
+            - File:
+                maxSize: 5M
+                maxSizeMessage: transport.screenshot.file_max
+                mimeTypes: [image/jpeg, image/jpg, image/png]
+                mimeTypesMessage: transport.screenshot.mimeTypes
+AppBundle\Entity\User:
+    properties:
+        username:
+            - Length:
+                min: 3
+                minMessage: user.username.length_min
+                max: 10
+                maxMessage: user.username.length_max
+        email:
+            - Email:
+                message: user.email.email
+                checkMX: true
+        avatar:
+            - Choice:
+                choices: [0, 1, 2, 3, 4, 5, 6, 7, 8]
+                message: user.avatar.choice
+        plainPassword:
+            - Length:
+                min: 6
+                minMessage: user.plainPassword.length_min
