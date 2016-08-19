@@ -6,19 +6,58 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 class User implements UserInterface
 {
+    /**
+     * @var integer
+     */
     private $id;
+
+    /**
+     * @var string
+     */
     private $username;
+
+    /**
+     * @var string
+     */
     private $password;
+
+    /**
+     * @var string
+     */
     private $plainPassword;
+
+    /**
+     * @var string
+     */
     private $email;
+
+    /**
+     * @var integer
+     */
     private $avatar;
+
+    /**
+     * @var string
+     */
     private $roles;
 
+    /**
+     * Get id
+     *
+     * @return integer
+     */
     public function getId()
     {
         return $this->id;
     }
 
+    /**
+     * Set username
+     *
+     * @param string $username
+     *
+     * @return $this
+     */
     public function setUsername($username)
     {
         $this->username = $username;
@@ -26,11 +65,23 @@ class User implements UserInterface
         return $this;
     }
 
+    /**
+     * Get suername
+     *
+     * @return string
+     */
     public function getUsername()
     {
         return $this->username;
     }
 
+    /**
+     * Set password
+     *
+     * @param string $password
+     *
+     * @return $this
+     */
     public function setPassword($password)
     {
         $this->password = $password;
@@ -38,11 +89,23 @@ class User implements UserInterface
         return $this;
     }
 
+    /**
+     * Get password
+     *
+     * @return string
+     */
     public function getPassword()
     {
         return $this->password;
     }
 
+    /**
+     * Set plain password
+     *
+     * @param string $plainPassword
+     *
+     * @return $this
+     */
     public function setPlainPassword($plainPassword)
     {
         $this->plainPassword = $plainPassword;
@@ -50,11 +113,23 @@ class User implements UserInterface
         return $this;
     }
 
+    /**
+     * Get plain password
+     *
+     * @return string
+     */
     public function getPlainPassword()
     {
         return $this->plainPassword;
     }
 
+    /**
+     * Set email
+     *
+     * @param string $email
+     *
+     * @return $this
+     */
     public function setEmail($email)
     {
         $this->email = $email;
@@ -62,11 +137,22 @@ class User implements UserInterface
         return $this;
     }
 
+    /**
+     * Get email
+     *
+     * @return string
+     */
     public function getEmail()
     {
         return $this->email;
     }
 
+    /**
+     * Set avatar
+     *
+     * @param integer $avatar
+     * @return $this
+     */
     public function setAvatar($avatar)
     {
         $this->avatar = $avatar;
@@ -74,11 +160,23 @@ class User implements UserInterface
         return $this;
     }
 
+    /**
+     * Get avatar
+     *
+     * @return integer
+     */
     public function getAvatar()
     {
         return $this->avatar;
     }
 
+    /**
+     * Set roles
+     *
+     * @param string $roles
+     *
+     * @return $this
+     */
     public function setRoles($roles)
     {
         $this->roles = $roles;
@@ -86,6 +184,11 @@ class User implements UserInterface
         return $this;
     }
 
+    /**
+     * Get roles
+     *
+     * @return array
+     */
     public function getRoles()
     {
         return (array)$this->roles;
@@ -122,6 +225,11 @@ class User implements UserInterface
             ) = unserialize($serialized);
     }
 
+    /**
+     * Get multipler from User role for calculate score
+     *
+     * @return float $multipler
+     */
     public function getMultipler()
     {
         $roles = $this->getRoles();
@@ -138,6 +246,13 @@ class User implements UserInterface
         return $multipler;
     }
 
+    /**
+     * Transform role for valid format
+     *
+     * @param string $roles
+     *
+     * @return string $roles
+     */
     public function transformRoles($roles)
     {
         switch (end($roles))
