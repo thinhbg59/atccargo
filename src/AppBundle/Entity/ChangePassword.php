@@ -2,6 +2,9 @@
 
 namespace AppBundle\Entity;
 
+/**
+ * ChangePassword
+ */
 class ChangePassword
 {
     /**
